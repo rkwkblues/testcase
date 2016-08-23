@@ -9,13 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+// Add the RxJS Observable operators we need in this app.
+require('./rxjs-operators');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <hero-list></hero-list>\n    <router-outlet></router-outlet>\n  "
+            template: "\n    <hero-list></hero-list>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

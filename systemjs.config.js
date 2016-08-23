@@ -7,8 +7,11 @@
     var map = {
         'app':                        'app', // 'dist',
         '@angular':                   'node_modules/@angular',
+        '@angular/router':            'node_modules/@angular/router',
+        '@angular/forms':             'node_modules/@angular/forms',
+        '@angular/router-deprecated': 'node_modules/@angular/router-deprecated',
         'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
-        'rxjs':                       'node_modules/rxjs'
+        'rxjs':                       'node_modules/rxjs',
     };
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {

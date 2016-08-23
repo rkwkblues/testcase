@@ -1,8 +1,8 @@
 <h1>TestCase BuildCaseInput ({{mode}})</h1>
 <h3>Test:</h3>
 <ul>
-  <li *ngFor="let testValue of test">
-    {{testValue.buildName}}, {{testValue.buildSelect}}, {{testValue.buildArea}}, {{testValue.buildLocation}}, {{testValue.buildCost}}, {{testValue.buildContent}}, {{testValue.buildImage}}
+  <li *ngFor="let testValue of buildCaseDate">
+    {{testValue.buildName}}
   </li>
 </ul>
 <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>

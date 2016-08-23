@@ -12,21 +12,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var testCase_service_1 = require('../common/testCase.service');
 var BuildCaseInputComponent = (function () {
-    function BuildCaseInputComponent(testService) {
-        this.testService = testService;
+    function BuildCaseInputComponent(testCaseService) {
+        this.testCaseService = testCaseService;
         this.mode = 'Promise';
     }
     BuildCaseInputComponent.prototype.ngOnInit = function () { this.getTest(); };
     BuildCaseInputComponent.prototype.getTest = function () {
         var _this = this;
-        this.testService.getTest()
-            .then(function (test) { return _this.test = test; }, function (error) { return _this.errorMessage = error; });
+        this.testCaseService.getTest()
+            .then(function (buildCaseDate) { return _this.buildCaseDate = buildCaseDate; }, function (error) { return _this.errorMessage = error; });
     };
     BuildCaseInputComponent = __decorate([
         core_1.Component({
             selector: 'hero-list',
-            templateUrl: 'app/buildCase/buildCaseInput.component.html',
-            providers: [testCase_service_1.TestCaseService]
+            templateUrl: 'app/buildCase/buildCaseInput.component.html'
         }), 
         __metadata('design:paramtypes', [testCase_service_1.TestCaseService])
     ], BuildCaseInputComponent);

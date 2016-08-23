@@ -12,10 +12,10 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
-var app_routing_1 = require('./app.routing');
 var angular2_in_memory_web_api_1 = require('angular2-in-memory-web-api');
-var buildCaseData_1 = require('./common/buildCaseData');
+var inMemoryData_service_1 = require('./common/inMemoryData.service');
 var app_component_1 = require('./app.component');
+var testCase_service_1 = require('./common/testCase.service');
 var buildCaseInput_componet_1 = require('./buildCase/buildCaseInput.componet');
 var AppModule = (function () {
     function AppModule() {
@@ -26,13 +26,12 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
-                http_1.JsonpModule,
-                app_routing_1.routing
+                http_1.JsonpModule
             ],
             providers: [
                 { provide: http_1.XHRBackend, useClass: angular2_in_memory_web_api_1.InMemoryBackendService },
-                { provide: angular2_in_memory_web_api_1.SEED_DATA, useClass: buildCaseData_1.BuildCaseData },
-                app_routing_1.appRoutingProviders
+                { provide: angular2_in_memory_web_api_1.SEED_DATA, useClass: inMemoryData_service_1.InMemoryDataService },
+                testCase_service_1.TestCaseService
             ],
             declarations: [
                 app_component_1.AppComponent,

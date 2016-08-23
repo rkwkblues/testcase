@@ -8,14 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-// Promise Version
+// Observable Version
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var http_2 = require('@angular/http');
 var TestCaseService = (function () {
     function TestCaseService(http) {
         this.http = http;
-        this.testUrl = 'app/buildCase/buildCaseTest.json'; // URL to web API
+        this.testUrl = 'app/buildCase.json'; // URL to web API
     }
     TestCaseService.prototype.getTest = function () {
         return this.http.get(this.testUrl)
@@ -23,8 +23,8 @@ var TestCaseService = (function () {
             .then(this.extractData)
             .catch(this.handleError);
     };
-    TestCaseService.prototype.addTest = function (buildName, buildSelect, buildArea, buildLocation, buildCost, buildContent, buildImage) {
-        var body = JSON.stringify({ buildName: buildName, buildSelect: buildSelect, buildArea: buildArea, buildLocation: buildLocation, buildCost: buildCost, buildContent: buildContent, buildImage: buildImage });
+    TestCaseService.prototype.addTest = function (buildName) {
+        var body = JSON.stringify({ buildName: buildName });
         var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
         var options = new http_2.RequestOptions({ headers: headers });
         return this.http.post(this.testUrl, body, options)

@@ -5,24 +5,23 @@ import { TestCaseService } from '../common/testCase.service';
 
 @Component({
   selector: 'hero-list',
-  templateUrl: 'app/buildCase/buildCaseInput.component.html',
-  providers: [ TestCaseService ]
+  templateUrl: 'app/buildCase/buildCaseInput.component.html'
 })
 export class BuildCaseInputComponent implements OnInit {
   errorMessage: string;
-  test: BuildCaseTest[];
+  buildCaseDate: BuildCaseTest[];
   mode = 'Promise';
 
-  constructor (private testService: TestCaseService) {}
+  constructor (private testCaseService: TestCaseService) {}
 
   ngOnInit() { this.getTest(); }
 
   getTest() {
-    this.testService.getTest()
-      .then(
-        test => this.test = test,
-        error =>  this.errorMessage = <any>error);
-  }
+    this.testCaseService.getTest()
+        .then(
+            buildCaseDate => this.buildCaseDate = buildCaseDate,
+            error =>  this.errorMessage = <any>error);
+}
 
 }
 
